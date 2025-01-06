@@ -136,6 +136,6 @@ class LIFNeuron(SpikingNeuron):
          Prints the current time, membrane potential, input current, and
          remaining refractory time.
         '''
-        s = f'{self.t:6.4f}s: s={self.s:5.3f}, v={self.__v:6.4f}, ref remaining={self.__ref_remaining:7.5f}s'
+        s = f'{self.t:6.4f}s: s={self.__s:5.3f}, v={self.__v:6.4f}, ref remaining={self.__ref_remaining:7.5f}s'
         return s
     
