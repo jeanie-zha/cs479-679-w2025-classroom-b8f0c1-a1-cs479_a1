@@ -125,9 +125,9 @@ class LIFNeuron(SpikingNeuron):
     def get_s(self):
         return self.__s
     def get_s_history(self):
-        return self.__s_history
+        return np.array(self.__s_history)
     def get_v_history(self):
-        return self.__v_history
+        return np.array(self.__v_history)
     
     def __repr__(self):
         '''
