@@ -1,3 +1,6 @@
+# (C) Jeff Orchard, 2025
+# University of Waterloo
+
 import numpy as np
 import matplotlib.pyplot as plt
 
