@@ -1,0 +1,40 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: test_slope
+      id: test_slope
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: test_slope
+        setup-command: ''
+        command: pytest test_slope.py
+        timeout: 10
+        max-score: 2
+    - name: test_step
+      id: test_step
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: test_step
+        setup-command: ''
+        command: pytest test_step.py
+        timeout: 10
+        max-score: 5
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TEST_SLOPE_RESULTS: "${{steps.test_slope.outputs.result}}"
+        TEST_STEP_RESULTS: "${{steps.test_step.outputs.result}}"
+      with:
+        runners: test_slope,test_step
