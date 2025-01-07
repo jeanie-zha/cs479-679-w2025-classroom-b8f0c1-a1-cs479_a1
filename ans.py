@@ -72,13 +72,13 @@ class LIFNeuron(SpikingNeuron):
         self.__I = self.get_input_buffer()
         self.set_input_buffer(0.)
         
-        #===============
+        #=========== YOUR CODE (start) ===========
         # (a)
         # YOUR CODE HERE
                     
         self.__dvdt = 0  # replace these lines
         self.__dsdt = 0
-        #===============            
+        #=========== YOUR CODE (end) ===========
 
         
     def step(self, dt):
@@ -103,7 +103,7 @@ class LIFNeuron(SpikingNeuron):
         self.__v_history.append(self.__v)
         self.__s_history.append(self.__s)
         
-        #===============
+        #=========== YOUR CODE (start) ===========
         # (b)
         # YOUR CODE HERE
         
@@ -112,7 +112,7 @@ class LIFNeuron(SpikingNeuron):
 
         # To add a spike at time self.t, use
         # self.add_spike(self.t)
-        #===============
+        #=========== YOUR CODE (end) ===========
 
         self.t += dt     # step forward in time
             
@@ -125,9 +125,9 @@ class LIFNeuron(SpikingNeuron):
     def get_s(self):
         return self.__s
     def get_s_history(self):
-        return np.array(self.__s_history)
+        return self.__s_history
     def get_v_history(self):
-        return np.array(self.__v_history)
+        return self.__v_history
     
     def __repr__(self):
         '''
