@@ -15,5 +15,3 @@ def test_input_current():
     net.simulate(0.003, 0.001)
 
     assert net.neur[1].get_s_history() == pytest.approx(np.array([0., 0., 10.]), abs=1e-4)
-
-test_input_current()
