@@ -17,3 +17,5 @@ def test_spike_interpolation():
 
     assert A.get_spikes()[0] == pytest.approx(0.00011, abs=1e-5)
     assert A.get_v() == pytest.approx(0., abs=1e-5)
+
+test_spike_interpolation()

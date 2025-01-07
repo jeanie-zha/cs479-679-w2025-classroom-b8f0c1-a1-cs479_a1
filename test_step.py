@@ -13,3 +13,5 @@ def test_step():
 
     assert A._LIFNeuron__v == pytest.approx(1, abs=1e-4)
     assert A._LIFNeuron__s == pytest.approx(43.08, abs=1e-4)
+
+test_step()

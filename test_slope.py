@@ -13,3 +13,5 @@ def test_slope():
 
     assert A._LIFNeuron__dvdt == pytest.approx(60., abs=1e-4)
     assert A._LIFNeuron__dsdt == pytest.approx(-24., abs=1e-4)
+
+test_slope()
