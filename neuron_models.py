@@ -310,6 +310,10 @@ class SpikingNetwork():
          
         The results of the simulation are stored in the individual neuron
         histories.
+
+        NOTE: Multiple calls to simulate will extend the simulation, not
+              restart it. To restart a simulation, you should rebuild
+              the network.
         '''
         
         current = 0 if len(self.t_history)==0 else self.t_history[-1]
