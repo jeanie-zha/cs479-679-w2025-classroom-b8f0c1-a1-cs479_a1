@@ -1,6 +1,8 @@
+# (C) Jeff Orchard, 2025
+# University of Waterloo
+
 import numpy as np
 from neuron_models import *
-
 
 
 #================================
