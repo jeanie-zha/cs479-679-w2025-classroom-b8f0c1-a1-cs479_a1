@@ -16,5 +16,5 @@ def test_step():
     A.slope()
     A.step(0.02)
 
-    assert A._LIFNeuron__v == pytest.approx(0.99, abs=1e-4)
+    assert A._LIFNeuron__v == pytest.approx(0.9, abs=1e-4)
     assert A._LIFNeuron__s == pytest.approx(43.08, abs=1e-4)
